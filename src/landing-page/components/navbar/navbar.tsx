@@ -10,7 +10,7 @@ import { APP_NAME } from "@/src/common/utils/constants";
 
 const Navbar = () => {
   return (
-    <nav className="shadow-md sticky top-0 bg-white py-2 lg:py-0">
+    <nav className="shadow-md sticky top-0 bg-white py-2 lg:py-0 z-50">
       <div className="max-w-screen-xl m-auto flex justify-between lg:pl-4 px-4 items-center lg:items-stretch">
         <div className="flex">
           <Image

@@ -150,3 +150,28 @@ export const FEATURES: {
     href: "/",
   },
 ];
+
+export const VELLO_101_CAROUSEL = {
+  content: [
+    {
+      title: "Boards",
+      description:
+        "Trello boards keep tasks organized and work moving forward. In a glance, see everything from “things to do” to “aww yeah, we did it!”",
+    },
+    {
+      title: "Lists",
+      description:
+        "The different stages of a task. Start as simple as To Do, Doing or Done—or build a workflow custom fit to your team’s needs. There’s no wrong way to Trello.",
+    },
+    {
+      title: "Cards",
+      description:
+        "Cards represent tasks and ideas and hold all the information to get the job done. As you make progress, move cards across lists to show their status.",
+    },
+  ],
+  images: [
+    "/images/landing-page/vello-101/boards.png",
+    "/images/landing-page/vello-101/lists.png",
+    "/images/landing-page/vello-101/cards.png",
+  ],
+};
