@@ -1,13 +1,16 @@
 import {
   Album,
   Brain,
+  Calendar,
   FolderOpen,
   Leaf,
   ListTodo,
   MonitorPlay,
+  Route,
 } from "lucide-react";
 
 import { APP_NAME } from "@/src/common/utils/constants";
+import { TWorkCardProps } from "@/src/landing-page/components/types";
 
 export const FEATURES: {
   title: string;
@@ -227,5 +230,28 @@ export const VELLO_IN_ACTION_CAROUSEL = [
       "Save time with a well-designed hub that helps teams find information easily and quickly.",
     color: "#f99cdb",
     Icon: Album,
+  },
+];
+
+export const SEE_WORK_CARDS: TWorkCardProps[] = [
+  {
+    Icon: Route,
+    title: "HIT DEADLINES EVERY TIME",
+    description:
+      "From weekly sprints to annual planning, Timeline view keeps all tasks on track. Quickly get a glimpse of what's coming down the pipeline and identify any gaps that might impede your team's progress.",
+    link: "/",
+    linkTitle: "Learn more about Timeline view",
+    img: "/images/landing-page/see-work/TrelloBoard_Timeline_2x.webp",
+    color: "#8777d9"
+  },
+  {
+    Icon: Calendar,
+    title: "STAY ON TOP OF TASKS",
+    description:
+      "Start each day without any surprises. Whether scheduling an editorial calendar or staying on top of to-dos, Calendar view is like a crystal ball giving you a clear vision of what work lies ahead.",
+    link: "/",
+    linkTitle: "Learn more about Calender view",
+    img: "/images/landing-page/see-work/TrelloBoard_Calendar_2x.webp",
+    color: "#00c7e5"
   },
 ];

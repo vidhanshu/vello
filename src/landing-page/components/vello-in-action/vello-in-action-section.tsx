@@ -112,7 +112,7 @@ const VelloInAction = () => {
           No need to start from scratch. Jump-start your workflow with a proven
           playbook designed for different teams. Customize it to make it yours.
         </p>
-        <Button variant="sec">Explore all Use Cases</Button>
+        <Button variant="sec" size="primary">Explore all Use Cases</Button>
       </div>
     </section>
   );
