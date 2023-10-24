@@ -6,6 +6,9 @@ const usePaginationOutside = () => {
 
   const slideTo = (index: number) => swiper?.slideTo(index);
 
+  const slideNext = () => swiper?.slideNext();
+  const slidePrev = () => swiper?.slidePrev();
+
   // change the slide when active index changes
   useEffect(() => {
     slideTo(activeIndex);
@@ -17,6 +20,8 @@ const usePaginationOutside = () => {
     slideTo,
     setActiveIndex,
     setSwiper,
+    slideNext,
+    slidePrev,
   };
 };
 

@@ -38,7 +38,6 @@ const Vello101Carousel = () => {
           }}
           className="mySwiper"
           spaceBetween={14}
-          initialSlide={activeIndex}
           onSwiper={setSwiper}
         >
           {VELLO_101_CAROUSEL.images.map((img) => (

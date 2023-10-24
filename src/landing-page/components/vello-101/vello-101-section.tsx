@@ -10,7 +10,7 @@ const Vello101 = () => {
     <section className="bg-gradient-to-t from-[#e6fcfe] from-[30%] pb-24 pt-4">
       <div className="max-w-screen-xlg m-auto px-4">
         <h1 className="font-bold mb-2">VELLO 101</h1>
-        <h1 className="text-4xl font-bold pb-4">A productivity powerhouse</h1>
+        <h1 className="text-2xl md:text-4xl font-bold pb-4">A productivity powerhouse</h1>
         <p className="text-xl max-w-xl">
           Simple, flexible, and powerful. All it takes are boards, lists, and
           cards to get a clear view of who's doing what and what needs to get

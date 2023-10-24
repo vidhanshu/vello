@@ -1,3 +1,12 @@
+import {
+  Album,
+  Brain,
+  FolderOpen,
+  Leaf,
+  ListTodo,
+  MonitorPlay,
+} from "lucide-react";
+
 import { APP_NAME } from "@/src/common/utils/constants";
 
 export const FEATURES: {
@@ -161,7 +170,7 @@ export const VELLO_101_CAROUSEL = {
     {
       title: "Lists",
       description:
-        "The different stages of a task. Start as simple as To Do, Doing or Done—or build a workflow custom fit to your team’s needs. There’s no wrong way to Trello.",
+        "The different stages of a task. Start as simple as To Do, Doing or Done—or build a workflow custom fit to your team's needs. There's no wrong way to Trello.",
     },
     {
       title: "Cards",
@@ -175,3 +184,48 @@ export const VELLO_101_CAROUSEL = {
     "/images/landing-page/vello-101/cards.png",
   ],
 };
+
+export const VELLO_IN_ACTION_CAROUSEL = [
+  {
+    title: "Project management",
+    description:
+      "Keep tasks in order, deadlines on track, and team members aligned with Trello.",
+    color: "#ff7452",
+    Icon: FolderOpen,
+  },
+  {
+    title: "Meetings",
+    description:
+      "Empower your team meetings to be more productive, empowering, and dare we say—fun.",
+    color: "#2684ff",
+    Icon: MonitorPlay,
+  },
+  {
+    title: "Onboarding",
+    description:
+      "Onboarding to a new company or project is a snap with Trello's visual layout of to-do's, resources, and progress tracking.",
+    color: "#57d9a3",
+    Icon: Leaf,
+  },
+  {
+    title: "Task management",
+    description:
+      "Use Trello to track, manage, complete, and bring tasks together like the pieces of a puzzle, and make your team's projects a cohesive success every time.",
+    color: "#ffc400",
+    Icon: ListTodo,
+  },
+  {
+    title: "Brainstorming",
+    description:
+      "Trello's boards, lists, and cards enable you to organize and prioritize your projects in a fun, flexible, and rewarding way.",
+    color: "#00c7e5",
+    Icon: Brain,
+  },
+  {
+    title: "Resource hub",
+    description:
+      "Save time with a well-designed hub that helps teams find information easily and quickly.",
+    color: "#f99cdb",
+    Icon: Album,
+  },
+];
