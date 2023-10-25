@@ -9,10 +9,13 @@ import { APP_NAME } from "@/src/common/utils/constants";
 const HeroSection = () => {
   return (
     <section
-      style={{
-        background: `url("//images.ctfassets.net/rz1oowkt5gyp/7lTGeXbBRNRLaVk2MdBjtJ/99c266ed4cb8cc63bd0c388071f01ff6/white-wave-bg.svg") center bottom -0.5px / 100% 14% no-repeat scroll padding-box border-box, linear-gradient(60deg, rgb(82, 67, 170), rgb(237, 80, 180)) 0% 0% / auto repeat scroll padding-box border-box rgb(82, 67, 170)`,
-      }}
-      className="px-4"
+      className="
+        px-4 
+        bg-[url('//images.ctfassets.net/rz1oowkt5gyp/7lTGeXbBRNRLaVk2MdBjtJ/99c266ed4cb8cc63bd0c388071f01ff6/white-wave-bg.svg'),_linear-gradient(60deg,rgb(82,67,170),rgb(237,80,180))]
+        bg-[position:center_bottom]
+        bg-[size:100%]
+        bg-no-repeat
+        "
     >
       <div className="max-w-[1100px] m-auto grid grid-cols-1 lg:grid-cols-2">
         <div className="space-y-4 lg:pr-2 py-16 lg:py-24">
@@ -24,7 +27,10 @@ const HeroSection = () => {
           </p>
           <div className="flex flex-col gap-y-6 items-center lg:items-start">
             <div className="lg:mt-4 flex items-center gap-x-4">
-              <Input placeholder="Email" className="flex-shrink-0 hidden lg:block"/>
+              <Input
+                placeholder="Email"
+                className="flex-shrink-0 hidden lg:block"
+              />
               <Button className="mt-2 lg:mt-0" variant="primary" size="primary">
                 Sign up - it's free!
               </Button>

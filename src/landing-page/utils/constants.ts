@@ -10,9 +10,14 @@ import {
 } from "lucide-react";
 
 import { APP_NAME } from "@/src/common/utils/constants";
-import { TWorkCardProps } from "@/src/landing-page/components/types";
+import {
+  TFeatureCardProps,
+  TPricingCardProps,
+  TTestimonialCarouselCardProps,
+  TWorkCardProps,
+} from "@/src/landing-page/components/types";
 
-export const FEATURES: {
+export const NAVBAR: {
   title: string;
   items?: { title: string; href: string; description: string }[];
   href?: string;
@@ -242,7 +247,7 @@ export const SEE_WORK_CARDS: TWorkCardProps[] = [
     link: "/",
     linkTitle: "Learn more about Timeline view",
     img: "/images/landing-page/see-work/TrelloBoard_Timeline_2x.webp",
-    color: "#8777d9"
+    color: "#8777d9",
   },
   {
     Icon: Calendar,
@@ -252,6 +257,110 @@ export const SEE_WORK_CARDS: TWorkCardProps[] = [
     link: "/",
     linkTitle: "Learn more about Calender view",
     img: "/images/landing-page/see-work/TrelloBoard_Calendar_2x.webp",
-    color: "#00c7e5"
+    color: "#00c7e5",
+  },
+];
+
+export const FEATURES: TFeatureCardProps[] = [
+  {
+    title: "Integrations",
+    description:
+      "Connect the apps your team already uses into your Trello workflow or add a Power-Up to fine-tune your specific needs.",
+    img: "/images/landing-page/ways-to-grow/integration.svg",
+    link: "/",
+    linkTitle: "Browse Integration",
+  },
+  {
+    title: "Butler Automation",
+    description:
+      "No-code automation is built into every Trello board. Focus on the work that matters most and let the robots do the rest.",
+    img: "/images/landing-page/ways-to-grow/gears.svg",
+    link: "/",
+    linkTitle: "Get to know automation",
+  },
+  {
+    title: "Trello Enterprise",
+    description:
+      "The productivity tool teams love, paired with the features and security needed for scale.",
+    img: "/images/landing-page/ways-to-grow/search.svg",
+    link: "/",
+    linkTitle: "Explore Enterprise",
+  },
+];
+
+export const TESTIMONIAL_CAROUSEL: TTestimonialCarouselCardProps[] = [
+  {
+    author: "Joey Rosenberg",
+    designation: "Global Leadership Director at WWC",
+    feedback:
+      "[Trello is] great for simplifying complex processes. As a manager, I can chunk [processes] down into bite-sized pieces for my team and then delegate that out, but still keep a bird's-eye view.",
+    info: "75% of organizations report that Trello delivers value to their business within 30 days.",
+    orgLogo: {
+      img: "/images/landing-page/ways-to-grow/woman-who-code-logo.svg",
+      width: 84,
+      height: 36,
+    },
+  },
+  {
+    author: "Sumeet Moghe",
+    designation: "Product Manager at ThoughtWorks",
+    feedback:
+      "Whether someone is in the office, working from home, or working on-site with a client, everyone can share context and information through Trello.",
+    info: "81% of customers chose Trello for its ease of use.",
+    orgLogo: {
+      img: "/images/landing-page/ways-to-grow/through-t-works.svg",
+      width: 223,
+      height: 36,
+    },
+  },
+  {
+    author: "Jefferson Scomacao",
+    designation: "Development Manager at IKEA/PTC",
+    feedback:
+      "We used Trello to provide clarity on steps, requirements, and procedures. This was exceptional when communicating with teams that had deep cultural and language differences.",
+    info: "74% of customers say Trello has improved communication with their co-workers and teams.",
+    orgLogo: {
+      img: "/images/landing-page/ways-to-grow/ptc-logo.svg",
+      width: 92,
+      height: 36,
+    },
+  },
+];
+
+export const PRICING_CARDS: TPricingCardProps[] = [
+  {
+    name: "FREE",
+    frequencyInfo: "Free for your whole team",
+    link: "/",
+    linkTitle: "Get started",
+    description: "For individuals or teams looking to organize any project.",
+    price: 0,
+  },
+  {
+    name: "STANDARD",
+    frequencyInfo: "Per user/month if billed annually ($6 billed monthly)",
+    link: "/",
+    linkTitle: "Sign up now",
+    description:
+      "For small teams that need to manage work and scale collaboration.",
+    price: 5,
+  },
+  {
+    name: "PREMIUM",
+    frequencyInfo: "Per user/month if billed annually ($12.50 billed monthly)",
+    link: "/",
+    linkTitle: "Try for free",
+    description:
+      "For teams that need to track and visualize multiple projects in several ways, including boards, timelines, calendars, etc.",
+    price: 10,
+  },
+  {
+    name: "ENTERPRISE",
+    frequencyInfo: "Per user/month - billed annually ($210.00 annual price per user)",
+    link: "/",
+    linkTitle: "Contact sales",
+    description:
+      "For organizations that need to connect work across teams with more security and controls.",
+    price: 17.50,
   },
 ];

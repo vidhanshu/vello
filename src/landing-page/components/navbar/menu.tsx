@@ -10,14 +10,14 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import ListItem from "@/src/landing-page/components/navbar/menu-item";
-import { FEATURES } from "@/src/landing-page/utils/constants";
+import { NAVBAR } from "@/src/landing-page/utils/constants";
 import { cn } from "@/lib/utils";
 
 const Menu = () => {
   return (
     <NavigationMenu>
       <NavigationMenuList>
-        {FEATURES.map((component) =>
+        {NAVBAR.map((component) =>
           !component.href ? (
             <NavigationMenuItem key={component.title}>
               <NavigationMenuTrigger className="text-base">

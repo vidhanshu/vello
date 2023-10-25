@@ -4,7 +4,6 @@ import React from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/navigation";
 
 import usePaginationOutside from "@/src/landing-page/hooks/usePaginationOutside";
 import { VELLO_101_CAROUSEL } from "@/src/landing-page/utils/constants";
@@ -42,7 +41,7 @@ const Vello101Carousel = () => {
         >
           {VELLO_101_CAROUSEL.images.map((img) => (
             <SwiperSlide key={img}>
-              <div className="h-[250px] sm:h-[400px] lg:h-[480px] rounded-lg relative">
+              <div className="h-[240px] sm:h-[400px] lg:h-[480px] rounded-lg relative">
                 <Image draggable={false} src={img} alt="" fill />
               </div>
             </SwiperSlide>

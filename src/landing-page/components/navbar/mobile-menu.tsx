@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { MenuIcon } from "lucide-react";
 
@@ -6,7 +7,6 @@ import {
   SheetContent,
   SheetDescription,
   SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
 import {
@@ -16,8 +16,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { FEATURES } from "@/src/landing-page/utils/constants";
-import Link from "next/link";
+import { NAVBAR } from "@/src/landing-page/utils/constants";
 import { APP_NAME } from "@/src/common/utils/constants";
 
 const MobileMenu = () => {
@@ -31,7 +30,7 @@ const MobileMenu = () => {
           <SheetHeader>
             <SheetDescription>
               <Accordion type="single" collapsible className="text-left">
-                {FEATURES.map((component, i) =>
+                {NAVBAR.map((component, i) =>
                   component.href ? (
                     <Link href={component.href} key={component.title}>
                       <div className="py-4 font-semibold text-black">
