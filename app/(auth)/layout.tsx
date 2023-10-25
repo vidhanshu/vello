@@ -1,3 +1,8 @@
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
+
 export default function AuthLayout({
   children,
 }: {
@@ -14,6 +19,11 @@ export default function AuthLayout({
       md:bg-fixed
       flex justify-center items-center"
     >
+      <Link href="/" className="absolute top-4 left-4">
+        <Button variant="ghost" className="p-2">
+          <ArrowLeft />
+        </Button>
+      </Link>
       {children}
     </main>
   );
