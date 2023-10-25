@@ -63,8 +63,12 @@ const MobileMenu = () => {
                 )}
               </Accordion>
               <div className="space-y-4 mt-4">
-                <Button variant="primary">Get {APP_NAME} for free</Button>
-                <Button variant="sec">Login</Button>
+                <Link className="block" href="/signup">
+                  <Button variant="primary">Get {APP_NAME} for free</Button>
+                </Link>
+                <Link className="block" href="/login">
+                  <Button variant="sec">Login</Button>
+                </Link>
               </div>
             </SheetDescription>
           </SheetHeader>

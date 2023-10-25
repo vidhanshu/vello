@@ -76,3 +76,9 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .link {
+    @apply text-blue-700 hover:text-main hover:underline;
+  }
+}

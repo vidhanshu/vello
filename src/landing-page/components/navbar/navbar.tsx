@@ -7,6 +7,7 @@ import Menu from "./menu";
 import MobileMenu from "./mobile-menu";
 
 import { APP_NAME } from "@/src/common/utils/constants";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
@@ -25,10 +26,18 @@ const Navbar = () => {
           </div>
         </div>
         <div className="hidden lg:flex">
-          <button className="px-4 text-lg font-medium">Log in</button>
-          <button className="px-4 text-lg font-medium bg-[#0165fe] hover:bg-blue-700 text-white">
+          <Link
+            className="flex justify-center items-center px-4 text-lg font-medium"
+            href="/login"
+          >
+            Log in
+          </Link>
+          <Link
+            href="/signup"
+            className="flex justify-center items-center px-4 text-lg font-medium bg-[#0165fe] hover:bg-blue-700 text-white"
+          >
             Get {APP_NAME} for free
-          </button>
+          </Link>
         </div>
 
         <div className="lg:hidden flex items-center justify-center">
