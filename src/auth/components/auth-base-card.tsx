@@ -1,11 +1,16 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { useRouter } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
 const AuthBaseCard = ({ type }: { type: "SIGNUP" | "LOGIN" }) => {
+  const router = useRouter();
+
   return (
     <div
       className="
@@ -30,6 +35,10 @@ const AuthBaseCard = ({ type }: { type: "SIGNUP" | "LOGIN" }) => {
               className="border-[2px] p-2 placeholder:text-sm hover:bg-gray-100 focus:bg-white focus-visible:ring-0 focus-visible:border-1 focus-visible:border-main focus-visible:ring-offset-0"
               placeholder="Enter your email"
             />
+            <Input
+              className="border-[2px] p-2 placeholder:text-sm hover:bg-gray-100 focus:bg-white focus-visible:ring-0 focus-visible:border-1 focus-visible:border-main focus-visible:ring-offset-0"
+              placeholder="Enter password"
+            />
             {type === "LOGIN" && (
               <p className="text-xs text-[#5e6c84]">
                 By signing up, I accept the Atlassian{" "}
@@ -43,7 +52,14 @@ const AuthBaseCard = ({ type }: { type: "SIGNUP" | "LOGIN" }) => {
                 .
               </p>
             )}
-            <Button className="w-full md:w-full p-2 " variant="primary">
+            <Button
+              onClick={() => {
+                // TODO: This handler will be passed via prop
+                router.push("/home");
+              }}
+              className="w-full md:w-full p-2 "
+              variant="primary"
+            >
               {type === "SIGNUP" ? "Sign up" : "Login"}
             </Button>
           </div>
