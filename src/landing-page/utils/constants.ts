@@ -2,11 +2,16 @@ import {
   Album,
   Brain,
   Calendar,
+  Facebook,
   FolderOpen,
+  Instagram,
   Leaf,
+  Linkedin,
   ListTodo,
   MonitorPlay,
   Route,
+  Twitter,
+  Youtube,
 } from "lucide-react";
 
 import { APP_NAME } from "@/src/common/utils/constants";
@@ -356,11 +361,59 @@ export const PRICING_CARDS: TPricingCardProps[] = [
   },
   {
     name: "ENTERPRISE",
-    frequencyInfo: "Per user/month - billed annually ($210.00 annual price per user)",
+    frequencyInfo:
+      "Per user/month - billed annually ($210.00 annual price per user)",
     link: "/",
     linkTitle: "Contact sales",
     description:
       "For organizations that need to connect work across teams with more security and controls.",
-    price: 17.50,
+    price: 17.5,
   },
 ];
+
+export const FOOTER = {
+  top: [
+    {
+      title: "About Vello",
+      description: "What's behind the boards.",
+      link: "/",
+    },
+    {
+      title: "Jobs",
+      description: "Learn about open roles on the Vello team.",
+      link: "/",
+    },
+    {
+      title: "Apps",
+      description: "Download the Vello App fro your desktop or Mobile devices.",
+      link: "/",
+    },
+    {
+      title: "Contact us",
+      description: "Need anything? Get in touch and we can help.",
+      link: "/",
+    },
+  ],
+  socials: [
+    {
+      Icon: Instagram,
+      link: "https://www.instagram.com/vidhanshu_borade/",
+    },
+    {
+      Icon: Facebook,
+      link: "https://www.facebook.com/vidhanshu.borade.18",
+    },
+    {
+      Icon: Linkedin,
+      link: "https://linkedin.com/in/vidhanshu",
+    },
+    {
+      Icon: Twitter,
+      link: "https://twitter.com/VidhanshuB",
+    },
+    {
+      Icon: Youtube,
+      link: "https://www.youtube.com/channel/UC5UYmgXN0KRvS8s1TXWdzhg",
+    },
+  ],
+};
