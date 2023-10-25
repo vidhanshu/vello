@@ -19,7 +19,7 @@ const GetStartedToday = () => {
         <div className="flex items-center gap-x-4 justify-center">
           <Input placeholder="Email" className="max-w-lg hidden md:block" />
           <Button className="md:w-fit" variant="primary" size="primary">
-            Sign up - it's free!
+            Sign up - it&apos;s free!
           </Button>
         </div>
       </div>

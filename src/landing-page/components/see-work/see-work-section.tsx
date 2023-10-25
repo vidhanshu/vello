@@ -21,7 +21,7 @@ const SeeWorkSection = () => {
             See work in a whole new way
           </h1>
           <p className="text-xl text-white text-center max-w-2xl m-auto">
-            View your team's projects from every angle and bring a fresh
+            View your team&apos;s projects from every angle and bring a fresh
             perspective to the task at hand.
           </p>
           <Button variant="sec" size="primary" className="m-auto block">

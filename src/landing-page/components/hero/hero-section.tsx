@@ -23,7 +23,7 @@ const HeroSection = () => {
             {APP_NAME} brings all your tasks, teammates, and tools together
           </h1>
           <p className="text-xl text-white text-center lg:text-left lg:max-w-lg">
-            Keep everything in the same place—even if your team isn't.
+            Keep everything in the same place—even if your team isn&apos;t.
           </p>
           <div className="flex flex-col gap-y-6 items-center lg:items-start">
             <div className="lg:mt-4 flex items-center gap-x-4">
@@ -32,7 +32,7 @@ const HeroSection = () => {
                 className="flex-shrink-0 hidden lg:block"
               />
               <Button className="mt-2 lg:mt-0" variant="primary" size="primary">
-                Sign up - it's free!
+                Sign up - it&apos;s free!
               </Button>
             </div>
             <div className="group hover:text-white text-[#e3daee] flex gap-x-2 cursor-pointer">

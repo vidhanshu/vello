@@ -11,10 +11,10 @@ const WaysToGrow = () => {
       <div className="max-w-screen-xlg m-auto px-4">
         <h1 className="font-bold mb-2">POWERFUL WAYS TO GROW</h1>
         <h1 className="text-2xl md:text-4xl font-bold pb-4">
-          Do more with Trello
+          Do more with Vello
         </h1>
         <p className="text-xl max-w-xl mb-6">
-          Trello's intuitive features give any team the ability to quickly set
+          Vello&apos;s intuitive features give any team the ability to quickly set
           up and customize workflows for just about anything.
         </p>
         <Features />
