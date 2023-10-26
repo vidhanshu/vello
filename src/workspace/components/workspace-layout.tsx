@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 import WorkspaceHeader from "./sidebar/workspace-header";
 
 const WorkspaceCustomLayout = ({ children }: { children: React.ReactNode }) => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   const handleToggle = () => {
     setOpen((o) => !o)
