@@ -9,11 +9,17 @@ const BoardCard = ({
   isFavorite,
   title,
   workspace,
-}: TRecentlyViewedBoard) => {
+  className,
+  ...props
+}: TRecentlyViewedBoard & React.HTMLAttributes<HTMLDivElement>) => {
   return (
     <div
-      className="w-full sm:w-[200px] h-[96px] rounded-md p-2  cursor-pointer hover:shadow-md transition-shadow"
+      className={cn(
+        "w-full sm:w-[200px] h-[96px] rounded-md p-2  cursor-pointer hover:shadow-md transition-shadow",
+        className
+      )}
       style={{ backgroundImage: backgroundGradient }}
+      {...props}
     >
       <div className="flex flex-col justify-between h-full">
         <h1 className="font-bold text-white">{title}</h1>

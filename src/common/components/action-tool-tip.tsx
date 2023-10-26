@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Tooltip,
   TooltipContent,
@@ -7,6 +9,7 @@ import {
 import { cn } from "@/lib/utils";
 import { TooltipContentProps } from "@radix-ui/react-tooltip";
 import { FC } from "react";
+import { useMediaQuery } from "usehooks-ts";
 
 interface IActionToolTipProps {
   children: React.ReactNode;
@@ -18,11 +21,25 @@ const ActionToolTip: FC<IActionToolTipProps> = ({
   children,
   content,
 }) => {
+  const isDownMd = useMediaQuery("(max-width: 767px)");
+
+  if (isDownMd) {
+    return children;
+  }
+
   return (
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger>{children}</TooltipTrigger>
-        <TooltipContent className={cn("shadow-none bg-black/70 text-white text-xs", className)} {...otherContentProps}>{content}</TooltipContent>
+        <TooltipContent
+          className={cn(
+            "shadow-none bg-black/70 text-white text-xs",
+            className
+          )}
+          {...otherContentProps}
+        >
+          {content}
+        </TooltipContent>
       </Tooltip>
     </TooltipProvider>
   );

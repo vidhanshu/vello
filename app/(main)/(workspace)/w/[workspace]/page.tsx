@@ -1,3 +1,5 @@
-export default function Boards({ params }: { params: { workspace: string } }) {
-    return <h1>Boards: {params.workspace}</h1>;
+import WorkspaceBoardsPage from "@/src/workspace/boards/components/workspace-boards-page";
+
+export default function Boards() {
+  return <WorkspaceBoardsPage />;
 }

@@ -40,7 +40,7 @@ const InviteMemberDialogue = ({ children }: TInviteMemberDialogueProps) => {
               <Input placeholder="Email address or name" variant="primary" />
               <div className="flex justify-between items-center">
                 <div>
-                  <p>Invite someone to this workspace using link:</p>
+                  <p className="hidden md:block">Invite someone to this workspace using link:</p>
                   {link  && <span onClick={disableLink} className="link">disable link</span>}
                 </div>
                 <button

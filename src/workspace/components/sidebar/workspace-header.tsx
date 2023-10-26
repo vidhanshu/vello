@@ -12,7 +12,7 @@ const WorkspaceHeader = () => {
       <div className="flex justify-between items-center">
         <WorkspaceAvatar
           avatarProps={{
-            className: "w-[50px] h-[50px]",
+            className: "w-[35px] h-[35px] md:w-[50px] md:h-[50px]",
           }}
           containerProps={{
             className: "items-start",
@@ -20,7 +20,7 @@ const WorkspaceHeader = () => {
           workspace="Testing"
         >
           <div>
-            <h1 className="text-xl font-bold flex items-center gap-x-4">
+            <h1 className="text-sm md:text-lg lg:text-xl font-bold flex items-center gap-x-4">
               Testing workspace
               <EditWorkspacePopover
                 defaultValues={{
@@ -47,7 +47,7 @@ const WorkspaceHeader = () => {
           >
             <div className="cursor-pointer">
               <UserPlus className="w-4 h-4 text-white" />
-              Invite members
+             <span className="hidden md:block">Invite members</span>
             </div>
           </Button>
         </InviteMemberDialogue>
