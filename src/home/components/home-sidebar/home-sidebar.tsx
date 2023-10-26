@@ -3,15 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  Activity,
-  ChevronRight,
-  KanbanSquare,
-  Plus,
-  Settings,
-  Trello,
-  UserPlus,
-} from "lucide-react";
+import { ChevronRight, Plus, Settings, Trello, UserPlus } from "lucide-react";
 
 import {
   Accordion,
@@ -20,29 +12,16 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
+import { HOME_FEED_SIDEBAR } from "@/src/home/utils/constants";
+import WorkspaceAvatar from "./workspace-avatar";
 
-const SIDEBARS = {
-  links: [
-    {
-      Icon: KanbanSquare,
-      title: "Boards",
-      href: "/boards",
-    },
-    {
-      Icon: Activity,
-      title: "Home",
-      href: "/home",
-    },
-  ],
-  workspace: ["workspace1", "workspace2"],
-};
 const HomeSidebar = () => {
   const pathname = usePathname();
 
   return (
     <div className="fixed w-[250px]">
       <ul className="space-y-2 border-b pb-2">
-        {SIDEBARS.links.map(({ Icon, href, title }, idx) => {
+        {HOME_FEED_SIDEBAR.links.map(({ Icon, href, title }, idx) => {
           const active = pathname.includes(href);
 
           return (
@@ -81,27 +60,25 @@ const HomeSidebar = () => {
           </button>
         </div>
         <Accordion type="multiple">
-          {SIDEBARS.workspace.map((workspace, idx) => (
+          {HOME_FEED_SIDEBAR.workspace.map((workspace, idx) => (
             <AccordionItem key={idx} value={workspace} className="border-none">
               <AccordionTrigger className="click-link focus:no-underline hover:no-underline py-2 text-sm font-semibold">
-                <div className="flex items-center gap-x-4">
-                  <div className="w-[30px] h-[30px] flex justify-center items-center bg-[linear-gradient(to_right,#00c6ff,#0072ff)] text-white rounded-sm">
-                    {workspace[0]}
-                  </div>
-                  {workspace}
-                </div>
+                <WorkspaceAvatar showName workspace={workspace} />
               </AccordionTrigger>
               <AccordionContent className="pl-4 py-2 text-[#45546e]">
                 <ul>
                   <li className="click-link py-2">
-                    <Link href="/" className="flex gap-x-4 items-center">
+                    <Link
+                      href={`/w/${workspace}`}
+                      className="flex gap-x-4 items-center"
+                    >
                       <Trello className="w-4 h-4" />
                       Boards
                     </Link>
                   </li>
                   <li className="click-link py-2 group">
                     <Link
-                      href="/"
+                      href={`/w/${workspace}/members`}
                       className="flex justify-between items-center"
                     >
                       <div className="flex items-center gap-x-4">
@@ -115,7 +92,10 @@ const HomeSidebar = () => {
                     </Link>
                   </li>
                   <li className="click-link py-2">
-                    <Link href="/" className="flex gap-x-4 items-center">
+                    <Link
+                      href={`/w/${workspace}/settings`}
+                      className="flex gap-x-4 items-center"
+                    >
                       <Settings className="w-4 h-4" />
                       Settings
                     </Link>

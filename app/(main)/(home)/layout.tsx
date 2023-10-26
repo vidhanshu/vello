@@ -15,11 +15,11 @@ export default function HomeLayout({
 }) {
   return (
     <div className="max-w-screen-xlg m-auto px-4">
-      <div className="grid grid-cols-12 py-10 gap-4">
-        <aside className="col-span-3 sticky top-0">
+      <div className="grid grid-cols-12 py-10 gap-4 justify-between">
+        <aside className="hidden lg:block md:col-span-3  z-10 bg-white min-w-[260px]">
           <HomeSidebar />
         </aside>
-        <div className="col-span-9">{children}</div>
+        <div className="col-span-12 lg:col-span-9">{children}</div>
       </div>
     </div>
   );

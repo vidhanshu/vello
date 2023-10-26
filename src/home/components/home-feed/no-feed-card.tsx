@@ -4,9 +4,7 @@ import React from "react";
 const NoFeedCard = () => {
   return (
     <div className="shadow-md border rounded-md overflow-hidden">
-      <div className="relative h-[129px]">
-        <Image src="/images/home/no-feed.svg" fill alt="" />
-      </div>
+      <div className="relative h-[129px] bg-[url('/images/home/no-feed.svg')] bg-no-repeat bg-cover bg-center" />
       <div className="p-4">
         <h1 className="text-lg font-bold text-center mb-2">
           Stay on track and up to date

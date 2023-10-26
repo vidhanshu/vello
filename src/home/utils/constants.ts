@@ -1,4 +1,7 @@
-export const RECENTLY_VIEWED = [
+import { Activity, KanbanSquare } from "lucide-react";
+import { TRecentlyViewedBoard } from "@/src/home/components/types";
+
+export const RECENTLY_VIEWED: TRecentlyViewedBoard[] = [
   {
     backgroundGradient: "linear-gradient(to right,#ffb347,#ffcc33)",
     title: "SVC Winning roadmap",
@@ -42,3 +45,19 @@ export const RECENTLY_VIEWED = [
     isFavorite: false,
   },
 ];
+
+export const HOME_FEED_SIDEBAR = {
+  links: [
+    {
+      Icon: KanbanSquare,
+      title: "Boards",
+      href: "/boards",
+    },
+    {
+      Icon: Activity,
+      title: "Home",
+      href: "/home",
+    },
+  ],
+  workspace: ["workspace1", "workspace2"],
+};

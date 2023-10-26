@@ -32,16 +32,16 @@ import {
 
 const formSchema = z.object({
   backgroundGradient: z.string().optional(),
-  boardTitle: z.string().refine((val) => val.trim().length > 0, {
+  boardTitle: z.string().min(5, {
     message: "👋 Board title is required",
   }),
-  workspace: z.string().refine((val) => val.trim().length > 0, {
+  workspace: z.string().min(5, {
     message: "👋 Workspace is required",
   }),
   visibility: z.enum(["workspace", "public", "private"]),
 });
 
-const CreateBoardPopover = () => {
+const CreateBoardPopover = ({ children }: { children: React.ReactNode }) => {
   const [selectedGradient, setSelectedGradient] = useState<string>(
     "linear-gradient(to right,#43cea2,#185a9d)"
   );
@@ -62,12 +62,7 @@ const CreateBoardPopover = () => {
   return (
     <Popover>
       <PopoverTrigger className="cursor-pointer" asChild>
-        <div className="group w-full click-link flex items-center gap-x-2">
-          <div className="flex justify-center items-center h-[30px] w-[35px] rounded-md bg-gray-100 group-hover:bg-gray-300 group-active:bg-gray-400">
-            <Plus className="w-4 h-4 text-zinc-600 group-hover:text-emerald-600" />
-          </div>
-          <h6 className="text-sm font-medium">Create a board</h6>
-        </div>
+        {children}
       </PopoverTrigger>
 
       <PopoverContent className="w-80">

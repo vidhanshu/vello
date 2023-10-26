@@ -79,7 +79,7 @@
 
 @layer components {
   .link {
-    @apply text-blue-700 hover:text-main hover:underline;
+    @apply text-blue-700 hover:text-main hover:underline cursor-pointer;
   }
   .click-link {
     @apply hover:bg-gray-200 active:bg-gray-300 p-2 rounded-md;
