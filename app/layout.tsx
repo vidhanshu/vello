@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Nunito_Sans } from "next/font/google";
 
+import { Toaster } from "@/components/ui/toaster";
+
 import "./globals.css";
 
 const nunito = Nunito_Sans({ subsets: ["latin"] });
@@ -17,7 +19,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={nunito.className}>{children}</body>
+      <body className={nunito.className}>
+        {children}
+        <Toaster />
+      </body>
     </html>
   );
 }

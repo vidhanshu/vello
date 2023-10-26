@@ -81,4 +81,10 @@
   .link {
     @apply text-blue-700 hover:text-main hover:underline;
   }
+  .click-link {
+    @apply hover:bg-gray-200 active:bg-gray-300 p-2 rounded-md;
+  }
+  .click-link-deep {
+    @apply click-link hover:bg-gray-300 active:bg-gray-400;
+  }
 }

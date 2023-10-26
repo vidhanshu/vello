@@ -12,6 +12,7 @@ const usePaginationOutside = () => {
   // change the slide when active index changes
   useEffect(() => {
     slideTo(activeIndex);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeIndex]);
 
   return {

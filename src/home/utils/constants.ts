@@ -1,37 +1,44 @@
-export const DUMMY_NAVBAR_DATA: { title: string; href: string; description: string }[] = [
+export const RECENTLY_VIEWED = [
   {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
-    description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+    backgroundGradient: "linear-gradient(to right,#ffb347,#ffcc33)",
+    title: "SVC Winning roadmap",
+    workspace: "Product",
+    isFavorite: true,
   },
   {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
-    description:
-      "For sighted users to preview content available behind a link.",
+    backgroundGradient: "linear-gradient(to right,#43cea2,#185a9d)",
+    title: "Marketing Plan",
+    workspace: "Marketing",
+    isFavorite: false,
   },
   {
-    title: "Progress",
-    href: "/docs/primitives/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+    backgroundGradient: "linear-gradient(to right,#ffa17f,#00223e)",
+    title: "Marketing Plan",
+    workspace: "Marketing",
+    isFavorite: false,
   },
   {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
+    backgroundGradient: "linear-gradient(to right,#360033,#0b8793)",
+    title: "Marketing Plan",
+    workspace: "Marketing",
+    isFavorite: false,
   },
   {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
-    description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+    backgroundGradient: "linear-gradient(to right,#d38312,#a83279)",
+    title: "Marketing Plan",
+    workspace: "Marketing",
+    isFavorite: false,
   },
   {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+    backgroundGradient: "linear-gradient(to right,#fdfc47,#24fe41)",
+    title: "Marketing Plan",
+    workspace: "Marketing",
+    isFavorite: false,
+  },
+  {
+    backgroundGradient: "linear-gradient(to right,#00c6ff,#0072ff)",
+    title: "Marketing Plan",
+    workspace: "Marketing",
+    isFavorite: false,
   },
 ];
