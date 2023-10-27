@@ -29,7 +29,7 @@ const InviteMemberDialogue = ({ children }: TInviteMemberDialogueProps) => {
 
     return (
         <Dialog>
-            <DialogTrigger>{children}</DialogTrigger>
+            <DialogTrigger asChild>{children}</DialogTrigger>
             <DialogContent className="w-full max-w-xl">
                 <DialogHeader>
                     <DialogTitle className="text-xl text-zinc-600">

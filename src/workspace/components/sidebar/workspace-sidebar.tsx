@@ -113,6 +113,7 @@ const WorkspaceSidebar = forwardRef<
                                         isFavorite,
                                         title,
                                         workspace,
+                                        link,
                                     },
                                     i
                                 ) => (
@@ -121,7 +122,7 @@ const WorkspaceSidebar = forwardRef<
                                         className="click-link px-3 rounded-none py-2 flex justify-between items-center group"
                                     >
                                         <Link
-                                            href="/"
+                                            href={`/b/${link}`}
                                             className="flex items-center gap-x-4 text-sm"
                                         >
                                             <div

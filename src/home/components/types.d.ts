@@ -3,4 +3,5 @@ export type TRecentlyViewedBoard = {
     title: string;
     workspace: string;
     isFavorite: boolean;
+    link?:string;
 };

@@ -9,7 +9,13 @@ import ActionToolTip from '@/src/common/components/action-tool-tip';
 import { ChevronRight } from 'lucide-react';
 import useSidebar from '../hooks/useSidebar';
 
-const WorkspaceCustomLayout = ({ children }: { children: React.ReactNode }) => {
+const WorkspaceCustomLayout = ({
+    children,
+    showHeader = true,
+}: {
+    children: React.ReactNode;
+    showHeader?: boolean;
+}) => {
     const { handleToggle, navbarRef, open, sidebarRef } = useSidebar();
 
     useEffect(() => {
@@ -56,7 +62,7 @@ const WorkspaceCustomLayout = ({ children }: { children: React.ReactNode }) => {
                 )}
             >
                 <div className={cn(open ? 'w-screen md:w-full' : '')}>
-                    <WorkspaceHeader />
+                    {showHeader && <WorkspaceHeader />}
                     {children}
                 </div>
             </div>
