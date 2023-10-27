@@ -1,8 +1,8 @@
-import WorkspaceMembersTypePage from "@/src/workspace/members/components/members-type-page";
-import React from "react";
+import WorkspaceMembersTypePage from '@/src/workspace/members/components/members-type-page';
+import React from 'react';
 
 const PageMemberType = () => {
-  return <WorkspaceMembersTypePage />;
+    return <WorkspaceMembersTypePage />;
 };
 
 export default PageMemberType;
