@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef, ElementRef } from "react";
 import Link from "next/link";
 import { useParams, usePathname } from "next/navigation";
 import {
@@ -16,29 +16,29 @@ import { cn } from "@/lib/utils";
 import stringShortener from "@/src/common/utils/string-shortener";
 import ActionToolTip from "@/src/common/components/action-tool-tip";
 
-const WorkspaceSidebar = ({
-  open,
-  handleToggle,
-}: {
-  open: boolean;
-  handleToggle: () => void;
-}) => {
+const WorkspaceSidebar = forwardRef<
+  ElementRef<"aside">,
+  {
+    open: boolean;
+    handleToggle: () => void;
+  }
+>(({ open, handleToggle }, ref) => {
   const pathname = usePathname();
   const { workspace }: { workspace: string } = useParams();
 
   return (
     <>
+      {/* Space provider for sidebar on left, since sidebar is position:fixed */}
       <div
         className={cn(
           "min-w-[260px] h-[calc(100vh-52px)]",
           open ? "" : "-ml-[260px]"
         )}
       >
-        <div
-          className={cn(
-            "min-w-[260px] h-[calc(100vh-52px)] overflow-y-auto fixed border-r",
-            open ? "" : "-l-[260px]"
-          )}
+        {/* Actual sidebar */}
+        <aside
+          ref={ref}
+          className="min-w-[260px] h-[calc(100vh-52px)] bg-white overflow-y-auto fixed border-r duration-300"
         >
           <div className="p-3 flex justify-between items-center border-b mb-4">
             <WorkspaceAvatar workspace={workspace} showName />
@@ -63,7 +63,7 @@ const WorkspaceSidebar = ({
                 <li
                   key={link}
                   className={cn(
-                    "click-link rounded-none py-2",
+                    "click-link px-3 rounded-none py-2",
                     active ? "bg-main/10" : ""
                   )}
                 >
@@ -93,9 +93,9 @@ const WorkspaceSidebar = ({
                 Your boards
               </h1>
               <CreateBoardPopover>
-                <button className="click-link p-1 rounded-sm">
+                <div className="click-link p-1 rounded-sm cursor-pointer">
                   <Plus className="w-4 h-4 text-gray-600" />
-                </button>
+                </div>
               </CreateBoardPopover>
             </div>
             <ul>
@@ -103,7 +103,7 @@ const WorkspaceSidebar = ({
                 ({ backgroundGradient, isFavorite, title, workspace }, i) => (
                   <li
                     key={i}
-                    className="click-link rounded-none py-2 flex justify-between items-center group"
+                    className="click-link px-3 rounded-none py-2 flex justify-between items-center group"
                   >
                     <Link
                       href="/"
@@ -133,24 +133,12 @@ const WorkspaceSidebar = ({
               )}
             </ul>
           </div>
-        </div>
+        </aside>
       </div>
-
-      <ActionToolTip content="Expand sidebar [">
-        <div
-          onClick={handleToggle}
-          className={cn(
-            "bg-zinc-400  hover:bg-zinc-500 fixed top-0 bottom-0 w-[15px] group cursor-pointer",
-            !open ? "left-0" : "-left-[30px]"
-          )}
-        >
-          <div className="transform click-link p-1 bg-gray-300 rounded-full absolute top-16 left-1 group-hover:bg-gray-400">
-            <ChevronRight className="w-4 h-4" />
-          </div>
-        </div>
-      </ActionToolTip>
     </>
   );
-};
+});
 
 export default WorkspaceSidebar;
+
+WorkspaceSidebar.displayName = "WorkspaceSidebar";

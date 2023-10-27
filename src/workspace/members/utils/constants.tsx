@@ -47,22 +47,4 @@ export const MEMBERS = [
     role: "workspace_member",
     request: "accepted",
   },
-  {
-    email: "example9@gmail.com",
-    username: "example9",
-    role: "workspace_member",
-    request: "pending",
-  },
-  {
-    email: "example10@gmail.com",
-    username: "example10",
-    role: "workspace_member",
-    request: "pending",
-  },
-  {
-    email: "example11@gmail.com",
-    username: "example11",
-    role: "workspace_member",
-    request: "accepted",
-  },
 ];
