@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import AuthBaseCard from "./auth-base-card";
+import AuthBaseCard from './auth-base-card';
 
 const LoginPage = () => {
-  return <AuthBaseCard type="LOGIN" />;
+    return <AuthBaseCard type="LOGIN" />;
 };
 
 export default LoginPage;
