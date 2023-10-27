@@ -1,3 +1,5 @@
+import SettingsPage from '@/src/workspace/settings/components/settings-page';
+
 export default function Settings() {
-    return <h1>Settings</h1>;
+    return <SettingsPage />;
 }
