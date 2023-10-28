@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { UserPlus, Star } from 'lucide-react';
 import { useParams } from 'next/navigation';
+import { useMediaQuery } from 'usehooks-ts';
 
 import {
     Select,
@@ -14,20 +15,24 @@ import {
 import { Globe, Lock, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import InviteMemberDialogue from '@/src/workspace/components/sidebar/invite-member-dialogue';
+import stringShortener from '@/src/common/utils/string-shortener';
 
 type TSelectState = 'workspace' | 'private' | 'public';
 const BoardNavbar = () => {
     const { board }: { board: string } = useParams();
     const [visibilty, setVisibility] = useState<TSelectState>('private');
+    const isDownMd = useMediaQuery('(max-width:768px)');
 
     const handleChange = (value: TSelectState) => {
         setVisibility(value as TSelectState);
     };
 
     return (
-        <nav className="px-4 h-[57px] border-b flex justify-between items-center">
+        <nav className="px-4 min-h-[57px] border-b flex justify-between items-center">
             <div className="flex items-center gap-x-4">
-                <h1 className="text-xl font-bold">{board}</h1>
+                <h1 className="text-md md:text-xl font-bold">
+                    {stringShortener(board, isDownMd ? 10 : 25)}
+                </h1>
                 <button className="click-link rounded-full">
                     <Star className="w-4 h-4 text-gray-600" />
                 </button>
@@ -61,7 +66,7 @@ const BoardNavbar = () => {
             </div>
             <div>
                 <InviteMemberDialogue>
-                    <Button variant="primary" className="h-[30px]">
+                    <Button variant="primary">
                         <span className="hidden md:block">Share</span>
                         <UserPlus className="md:ml-2 w-4 h-4" />
                     </Button>
