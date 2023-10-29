@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 
 import { APP_NAME } from '@/src/common/utils/constants';
 import WorkspaceCustomLayout from '@/src/workspace/components/workspace-layout';
+import BoardColumnContextProvider from '@/src/board/context/board-column-context/board-column-context-provider';
 
 export const metadata: Metadata = {
     title: `Board | ${APP_NAME}`,
@@ -13,5 +14,11 @@ export default function BoardLayout({
 }: {
     children: React.ReactNode;
 }) {
-    return <WorkspaceCustomLayout showHeader={false}>{children}</WorkspaceCustomLayout>;
+    return (
+        <BoardColumnContextProvider>
+            <WorkspaceCustomLayout showHeader={false}>
+                {children}
+            </WorkspaceCustomLayout>
+        </BoardColumnContextProvider>
+    );
 }

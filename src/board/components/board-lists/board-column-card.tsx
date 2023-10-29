@@ -8,9 +8,14 @@ import ActionToolTip from '@/src/common/components/action-tool-tip';
 type TBoardColumnCardProps = {
     card: TBoardColumnCard;
     index: number;
+    handleStartEditing: (title: string, id: string) => void;
 };
 
-const BoardColumnCard = ({ card, index }: TBoardColumnCardProps) => {
+const BoardColumnCard = ({
+    card,
+    index,
+    handleStartEditing,
+}: TBoardColumnCardProps) => {
     return (
         <Draggable key={card.id} draggableId={card.id} index={index}>
             {(provided, snapshot) => (
@@ -45,7 +50,12 @@ const BoardColumnCard = ({ card, index }: TBoardColumnCardProps) => {
                             ) : null}
                             <h1 className="text-xs">{card.title}</h1>
                         </div>
-                        <button className="click-link rounded-full invisible group-hover:visible">
+                        <button
+                            className="click-link rounded-full invisible group-hover:visible"
+                            onClick={() => {
+                                handleStartEditing(card.title, card.id);
+                            }}
+                        >
                             <Pencil className="w-3 h-3 text-gray-600" />
                         </button>
                     </div>
