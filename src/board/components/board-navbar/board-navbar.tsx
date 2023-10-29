@@ -29,7 +29,7 @@ const BoardNavbar = () => {
 
     return (
         <nav className="px-4 min-h-[57px] border-b flex justify-between items-center">
-            <div className="flex items-center gap-x-4">
+            <div className="flex items-center gap-x-1 md:gap-x-4">
                 <h1 className="text-md md:text-xl font-bold">
                     {stringShortener(board, isDownMd ? 10 : 25)}
                 </h1>
@@ -38,7 +38,7 @@ const BoardNavbar = () => {
                 </button>
                 <div className="sm:w-[150px]">
                     <Select value={visibilty} onValueChange={handleChange}>
-                        <SelectTrigger>
+                        <SelectTrigger className='h-[30px] w-[120px] md:w-auto border-[1px] overflow-hidden'>
                             <SelectValue placeholder="Change visibility" />
                         </SelectTrigger>
                         <SelectContent>
@@ -66,7 +66,7 @@ const BoardNavbar = () => {
             </div>
             <div>
                 <InviteMemberDialogue>
-                    <Button variant="primary">
+                    <Button variant="primary" className="h-[30px]">
                         <span className="hidden md:block">Share</span>
                         <UserPlus className="md:ml-2 w-4 h-4" />
                     </Button>

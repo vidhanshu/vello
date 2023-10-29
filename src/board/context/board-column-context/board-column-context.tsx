@@ -11,6 +11,7 @@ const BoardColumnContext = createContext<TBoardColumnContext>({
     addCard() {},
     updateCardTitle() {},
     updateColumn() {},
+    moveList() {},
 });
 
 export default BoardColumnContext;

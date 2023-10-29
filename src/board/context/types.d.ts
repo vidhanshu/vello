@@ -11,4 +11,5 @@ export type TBoardColumnContext = {
         updatedCard: TBoardColumn
     ) => void;
     updateColumn: (columnId: string, updatedColumn: TBoardColumn) => void;
+    moveList: (sourceIdx: number, destinationIdx: number) => void;
 };

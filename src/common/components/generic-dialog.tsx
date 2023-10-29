@@ -20,10 +20,12 @@ type TGenericDialogProps = {
     variant?: 'success' | 'error' | 'warning' | 'info' | 'confirm';
     title: string;
     content?: React.ReactNode;
-    children: React.ReactNode;
+    children?: React.ReactNode;
     description?: string;
     handleSubmit: () => void;
     buttonTitle?: string;
+    open?: boolean;
+    setOpen?: React.Dispatch<React.SetStateAction<boolean>>;
 };
 const getButtonPropsByVariant = (
     variant: TGenericDialogProps['variant']
@@ -63,6 +65,8 @@ const GenericDialog = ({
     variant = 'confirm',
     buttonTitle = "Ok, I'm sure",
     handleSubmit,
+    open,
+    setOpen,
 }: TGenericDialogProps) => {
     const [loading, setLoading] = useState(false);
 
@@ -81,9 +85,11 @@ const GenericDialog = ({
     const { className, ...otherButtonProps } = getButtonPropsByVariant(variant);
 
     return (
-        <Dialog>
-            <DialogTrigger asChild>{children}</DialogTrigger>
-            <DialogContent className='max-w-sm sm:max-w-xl'>
+        <Dialog {...(open && setOpen ? { open, onOpenChange: setOpen } : {})}>
+            {children ? (
+                <DialogTrigger asChild>{children}</DialogTrigger>
+            ) : null}
+            <DialogContent className="max-w-sm sm:max-w-xl">
                 <DialogHeader>
                     <DialogTitle>{title}</DialogTitle>
                     {description ? (

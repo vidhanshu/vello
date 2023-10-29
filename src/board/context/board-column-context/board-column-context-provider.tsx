@@ -34,12 +34,24 @@ const BoardColumnContextProvider = ({
         const sourceIdx = source.index;
         const destinationIdx = destination.index;
         const newState = [...columns];
-        const [removed] = newState
-            .find((list) => list.id === source.droppableId)!
-            .cards.splice(sourceIdx, 1);
-        newState
-            .find((list) => list.id === destination.droppableId)!
-            .cards.splice(destinationIdx, 0, removed);
+
+        // if list/column is getting moved
+        if (
+            destination.droppableId === source.droppableId &&
+            source.droppableId === 'board'
+        ) {
+            const [removed] = newState.splice(sourceIdx, 1);
+            newState.splice(destinationIdx, 0, removed);
+        }
+        // if card is getting moved
+        else {
+            const [removed] = newState
+                .find((list) => list.id === source.droppableId)!
+                .cards.splice(sourceIdx, 1);
+            newState
+                .find((list) => list.id === destination.droppableId)!
+                .cards.splice(destinationIdx, 0, removed);
+        }
         setColumns(newState);
     };
 
@@ -111,6 +123,13 @@ const BoardColumnContextProvider = ({
         });
     };
 
+    const moveList = (sourceIdx: number, destinationIdx: number) => {
+        const newColumns = [...columns];
+        const [removed] = newColumns.splice(sourceIdx, 1);
+        newColumns.splice(destinationIdx, 0, removed);
+        setColumns(newColumns);
+    };
+
     return (
         <BoardColumnContext.Provider
             value={{
@@ -122,6 +141,7 @@ const BoardColumnContextProvider = ({
                 addCard,
                 updateColumn,
                 updateCardTitle,
+                moveList
             }}
         >
             {children}

@@ -18,7 +18,6 @@ const AddListForm = ({ setIsAddingList }: TAddListForm) => {
         if (!listTitle) return;
         addNewColumn(listTitle);
         setListTitle('');
-        setIsAddingList(false);
     };
 
     return (
